@@ -1,8 +1,8 @@
-#My promo page
+# My promo page
 
-##How to see this project online
+## How to see this project online
 
-<h5 align="center">You can check my promo page here: <a href="https://ashmee.github.io" target="_blank">ashmee.github.io</a>.</h5> 
+<h5>You can check my promo page here: <a href="https://ashmee.github.io" target="_blank">ashmee.github.io</a>.</h5> 
 
 ## How To Build
 You must have installed: `node`, `npm`, `gulp`. (Global dependencies).
