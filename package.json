@@ -1,0 +1,58 @@
+{
+  "name": "ashmee.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp lint && exit 1",
+    "start": "gulp dev",
+    "build": "gulp prod",
+    "postinstall": "gulp dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashmee/ashmee.github.io.git"
+  },
+  "pre-push": [
+    "test"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashmee/ashmee.github.io/issues"
+  },
+  "homepage": "https://github.com/ashmee/ashmee.github.io",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "autoprefixer": "^9.4.8",
+    "browser-sync": "^2.26.3",
+    "glob": "^7.1.3",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean": "^0.4.0",
+    "gulp-compile-handlebars": "^0.6.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-env": "^0.4.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-if": "^2.0.2",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-postcss": "^8.0.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "postcss-assets": "^5.0.0",
+    "postcss-nested": "^4.1.1",
+    "postcss-preset-env": "^6.5.0",
+    "postcss-reporter": "^6.0.1",
+    "postcss-short": "^5.0.0",
+    "pre-push": "^0.1.1",
+    "stylelint": "^9.10.1"
+  },
+  "dependencies": {
+    "@octokit/rest": "^16.28.0"
+  }
+}

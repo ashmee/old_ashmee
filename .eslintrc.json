@@ -1,0 +1,27 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "semi": "warn",
+    "eqeqeq": "warn",
+    "accessor-pairs": "error",
+    "arrow-spacing": ["error", {
+      "before": true,
+      "after": true
+    }],
+    "block-spacing": ["error", "always"],
+    "no-invalid-this": "error",
+    "no-empty-character-class": "error",
+    "no-empty-pattern": "error",
+    "no-eval": "error",
+    "no-ex-assign": "error",
+    "no-extend-native": "error",
+    "no-extra-bind": "error",
+    "no-extra-boolean-cast": "error"
+  }
+}
