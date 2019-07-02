@@ -72,7 +72,6 @@
             active = Number(document.querySelector('.active').text);
             makeRequest(active);
         }
-
     };
 
 
@@ -90,7 +89,6 @@
         }
         gitBlock.appendChild(clone);
         document.body.querySelector('.pagination').addEventListener('click', pageClicker);
-
     };
 
     //error-handling block
@@ -110,6 +108,7 @@
     };
 
     const makeRequest = (page, pagination) => {
+
         octokit.request('GET /users/:username/repos', {
             username: 'ashmee',
             type: 'private',

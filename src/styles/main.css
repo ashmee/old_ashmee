@@ -728,6 +728,10 @@ a {
         grid-template-rows: auto auto auto auto auto auto auto auto;
     }
 
+    .pagination {
+        position: static;
+    }
+
     .recent-works__first {
         margin-right: 1.5em;
     }
@@ -1037,7 +1041,6 @@ a {
 
     .mobile-menu {
         display: flex;
-
     }
 
     .mobile-menu__full {
@@ -1061,6 +1064,11 @@ a {
     .sidenav__link {
         padding: 10px 22px 0;
     }
+
+    .pagination {
+        position: static;
+    }
+
 
     .pagination a {
         font-size: 28px;
