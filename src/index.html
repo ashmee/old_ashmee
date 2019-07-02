@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="theme-color" content="#DFDFE6"/>
     <meta property="og:title" content="E. Ash promo site">
     <meta property="og:description" content="Frontend developer promo">
     <meta property="og:url" content="https://ashmee.github.io/">
-    <meta property="og:image" content="https://scontent.fhel6-1.fna.fbcdn.net/v/t1.0-9/17554590_655742811303239_4197875621823497545_n.jpg?_nc_cat=105&_nc_ht=scontent.fhel6-1.fna&oh=5b9fb4cfabb03aed889069e49699bfc3&oe=5D4713A1" />
+    <meta property="og:image" content="https://pp.userapi.com/c851436/v851436814/15d4fb/yIiiAIILB5Q.jpg" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="E. Ash promo">
     <meta property="twitter:card" content="summary" />
@@ -18,9 +19,8 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./font/fonts.css">
     <link rel="stylesheet" href="./css/index.min.css">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#ffc700">
     <meta name="Description" content="My awesome portfolio site">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -48,12 +48,12 @@
 
 
 <nav id="mobileMenu" class="mobile-menu__full">
-    <a href="#works" class="sidenav__link"><h2 class="title recent-works__title">Работы</h2></a>
-    <a href="#skills" class="sidenav__link"><h2 class="title recent-works__title">Навыки</h2></a>
-    <a href="#git-repo" class="sidenav__link"><h2 class="title recent-works__title">Git Репозитории</h2></a>
+    <a href="#works" class="sidenav__link" onclick="menuMobileClickHandler()"><h2 class="title recent-works__title">Работы</h2></a>
+    <a href="#skills" class="sidenav__link" onclick="menuMobileClickHandler()"><h2 class="title recent-works__title">Навыки</h2></a>
+    <a href="#git-repo" class="sidenav__link" onclick="menuMobileClickHandler()"><h2 class="title recent-works__title">Git Репозитории</h2></a>
+    <a href="#footer" class="sidenav__link" onclick="menuMobileClickHandler()"><h2 class="title recent-works__title">Контакты</h2></a>
     <div class="footer__contacts">
-        <a href="#footer" class="sidenav__link"><h2 class="title recent-works__title">Контакты</h2></a>
-        <a class="footer__tel" href="tel:+6493456758">+7 982 654 06 71</a>
+        <a class="footer__tel" href="tel:+79826540671">+7 982 654-06-71</a>
         <a class="footer__tel" href="mailto:ash.ei@ya.ru">ash.ei@ya.ru</a>
         <div class="social">
             <a class="social__link" href="https://www.facebook.com/evgeny.ashikhmin" rel="noopener" target="_blank" title="Я в Facebook">
@@ -72,8 +72,7 @@
     </div>
 </nav>
 
-
-<a href="#header" class="side-arrow">&#65087;</a>
+<a href="#header" class="side-arrow">︿</a>
 
 <main class="container">
     <header class="header" id="header"><div class="logo">//EA.</div>
@@ -97,11 +96,9 @@
                 <div class="introduce__firstname">Евгений</div>
                 <div class="introduce__surname">Ашихмин<span class="introduce__firstname">.</span></div>
             </div>
-
         </div>
 
-        <div class="introduce__content">Привет, я <div class="title">джуниор фронтенд-разработчик</div> из Екатеринбурга.
-        </div>
+        <div class="introduce__content">Привет, я <div class="title">джуниор фронтенд-разработчик</div> из Екатеринбурга.</div>
 
         <div class="introduce__paragraph">Если у вас есть проект, который вы хотели бы создать с использованием современных веб-технологий, я с удовольствием поработал бы с вами над ним.</div>
         <a class="tel" href="mailto:ash.ei@ya.ru">ash.ei@ya.ru</a>
@@ -114,8 +111,7 @@
             <a href="https://ashmee.github.io/tsl" rel="noopener" target="_blank" class="recent-works__first"><img class="recent-works__img" alt="work" src="images/tesla-preview.png"/></a>
             <a href="https://ashmee.github.io/emoji-catcher/" rel="noopener" target="_blank" class="recent-works__second"><img class="recent-works__img" alt="work" src="images/mice-catcher-preview.png"/></a>
         </div>
-        <a href="#skills" class="recent-works__next-page">&#65088;</a>
-
+        <a href="#skills" class="recent-works__next-page">﹀</a>
     </div>
     <div class="skills" id="skills">
         <div class="skills__content">
@@ -125,29 +121,24 @@
     </div>
     <div class="skills-content">
         <div class="technology">
-            <div class="technology__title"><span class="technology__title--number">01</span>HTML и CSS</div>
+            <div class="technology__title"><span class="technology__title--number">01</span>HTML и CSS</div>
             <div class="technology__description"><p>Есть опыт кроссбраузерной верстки страниц с использованием flexbox и grid. Знаком с понятием семантичности и методологией BEM.</p></div>
-
         </div>
 
         <div class="technology">
             <div class="technology__title"> <span class="technology__title--number">02</span>JS</div>
-            <div class="technology__description"><p>Умею работать с нативным JavaScript. ES5/ES6</p></div>
-
+            <div class="technology__description"><p>Умею работать с нативным JavaScript. ES5/ES6</p></div>
         </div>
 
         <div class="technology">
             <div class="technology__title"> <span class="technology__title--number">03</span>GIT</div>
-            <div class="technology__description"><p>Знаком с системой контроля версий Git.</p>
-            </div>
+            <div class="technology__description"><p>Знаком с системой контроля версий Git.</p></div>
         </div>
-
 
         <div class="technology">
             <div class="technology__title"> <span class="technology__title--number">04</span>Webpack</div>
             <div class="technology__description"><p>Использую для сборки проектов, транспиляции JS кода, обработки CSS файлов, минификации графики и типографирования текста.</p></div>
         </div>
-
 
         <div class="technology">
             <div class="technology__title"> <span class="technology__title--number">05</span>Другое</div>
@@ -158,7 +149,7 @@
     <div class="git-repo" id="git-repo">
         <div class="git-repo__content">
             <h2 class="title recent-works__title">Git Репозитории</h2>
-            <p class="description">Вот несколько репозиториев с GitHub с моими проектами:</p>
+            <p class="description">Вот несколько репозиториев с GitHub с моими проектами:</p>
         </div>
     </div>
     <div class="git-content">
@@ -168,9 +159,9 @@
     </div>
     <div class="hire-me">
         <div class="hire-me__content">
-            <h2 class="title recent-works__title">Наймите меня</h2>
-            <p class="description">Итак, вы ищете профессионального, коммуникабельного и пунктуального программиста с обширными навыками веб-разработки для вашего следующего проекта?</p>
-            <p class="description">Если у вас есть приложение, которое вы заинтересованы создать с использованием веб-технологий, я бы с удовольствием поработал с вами над ним.</p>
+            <h2 class="title recent-works__title">Почему я?</h2>
+            <p class="description">Итак, вы ищете профессионального, коммуникабельного и пунктуального программиста с обширными навыками веб-разработки для вашего следующего проекта?</p>
+            <p class="description">Если у вас есть приложение, которое вы заинтересованы создать с использованием веб-технологий, я бы с удовольствием поработал с вами над ним.</p>
 
             <a class="hire-me__mail" href="mailto:ash.ei@ya.ru">ash.ei@ya.ru</a>
         </div>
@@ -192,12 +183,9 @@
         </div>
         <div class="footer__contacts">
             <h4 class="footer__title--secondary">Контакты</h4>
-            <a class="footer__tel" href="tel:+6493456758">+7 982 654 06 71</a>
+            <a class="footer__tel" href="tel:+79826540671">+7 982 654-06-71</a>
             <a class="footer__tel" href="mailto:ash.ei@ya.ru">ash.ei@ya.ru</a>
             <div class="social">
-                <!--<a href="#" title="Я в Twitter">-->
-                <!--<img src="images/social-twitter.svg" draggable="false" alt="twitter">-->
-                <!--</a>-->
                 <a class="social__link" href="https://www.facebook.com/evgeny.ashikhmin" rel="noopener" target="_blank" title="Я в Facebook">
                     <img src="images/social-fb.svg" draggable="false" alt="facebook">
                 </a>
@@ -229,13 +217,13 @@
 
 <template class="template__pagination">
     <div class="pagination">
-        <a href="#">&laquo;</a>
+        <a href="#">«</a>
         <a href="#" class="active">1</a>
         <a href="#">2</a>
         <a href="#">3</a>
         <a href="#">4</a>
         <a href="#">5</a>
-        <a href="#">&raquo;</a>
+        <a href="#">»</a>
     </div>
 </template>
 

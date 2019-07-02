@@ -44,7 +44,7 @@
 
     };
 
-    //pagination click handle
+    //pagination click handler
     const pageClicker = evt => {
         evt.preventDefault();
 
@@ -109,9 +109,7 @@
         console.error(err);
     };
 
-
     const makeRequest = (page, pagination) => {
-
         octokit.request('GET /users/:username/repos', {
             username: 'ashmee',
             type: 'private',
@@ -122,7 +120,6 @@
             .then(result => {
                 const formattedResult = [];
                 const pageInfo = result.headers.link;
-
                 result.data.map(item => {
                     const {
                         name,
@@ -144,7 +141,6 @@
                 if (pagination) {
                     parseData(pageInfo)
                 }
-
             })
             .catch(err => errDrawer(err));
     };
@@ -155,7 +151,7 @@
         const currentCoord = window.pageYOffset;
         const sideMenu = document.getElementById('mySidenav');
 
-        if ((sideMenu.style.width === "250px" ||currentCoord > 200) && window.innerWidth > 900) {
+        if ((sideMenu.style.width === "260px" ||currentCoord > 200) && screen.width > 975 && window.innerWidth > 975) {
             sideMenuButton.style.display="flex";
             sideArrow.style.display="block";
         } else {
@@ -171,14 +167,14 @@ const menuClickHandler = () => {
     let sideMenu = document.getElementById('mySidenav');
     const sideMenuButton = document.querySelector('.side-menu');
 
-    if (sideMenu.style.width === "250px") {
+    if (sideMenu.style.width === "260px") {
         sideMenuButton.setAttribute('class', 'side-menu');
         sideMenu.style.width = "0px";
         closeMenuOnEscape();
     } else {
         sideMenuButton.style.display="flex";
         sideMenuButton.setAttribute('class', 'side-menu opened');
-        sideMenu.style.width = "250px";
+        sideMenu.style.width = "260px";
         document.body.addEventListener('keydown', closeMenuOnEscape);
     }
 };
@@ -198,7 +194,6 @@ const menuMobileClickHandler = () => {
         mobileMenuButton.setAttribute('class', 'mobile-menu opened');
         mobileMenu.style.width = "100vw";
         mobileMenu.style.height = "100vh";
-        //document.body.addEventListener('keydown', closeMenuOnEscape);
     }
 };
 
