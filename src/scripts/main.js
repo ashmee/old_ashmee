@@ -47,10 +47,10 @@
             let updateTime = formattedResult[i].updated_at;
             let updateTimeUTC = new Date(Date.parse(`${updateTime}`));
             gitRepoUpdateTime.textContent = formatter.format(updateTimeUTC);
-			
             let clone = document.importNode(temp.content, true);
             gitBlock.insertBefore(clone, gitBlock.firstChild);
         }
+
     };
 
     //pagination click handler
@@ -186,6 +186,7 @@ const menuClickHandler = () => {
         document.body.addEventListener('keydown', closeMenuOnEscape);
     }
 };
+
 
 const menuMobileClickHandler = () => {
     let mobileMenu = document.getElementById('mobileMenu');
