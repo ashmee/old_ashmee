@@ -1,3 +1,5 @@
+
+
 # My promo page
 
 ## How to see this project online
@@ -34,7 +36,7 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
 
 ## Project structure
 
-* `build/` build directory 
+* `build/` build directory with minified files
 * `src/` 
     - `font/`
     - `styles/`
@@ -45,3 +47,4 @@ Note: If you're using Linux Bash for Windows, [see this guide](https://www.howto
     - `index.html` entry-point html 
 * `.eslintrc.json` eslint rules
 * `.stylelintrc.json` stylilint rules
+* `index.html`  example html file for "github pages" <a href="https://ashmee.github.io" target="_blank">ashmee.github.io</a>
