@@ -35,13 +35,22 @@
                     gitRepoLangColor.style.backgroundColor = '#83838E';
             }
 
+            const formatter = new Intl.DateTimeFormat("ru", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "numeric",
+                minute: "numeric",
+                second: "numeric"
+            });
+
             let updateTime = formattedResult[i].updated_at;
             let updateTimeUTC = new Date(Date.parse(`${updateTime}`));
-            gitRepoUpdateTime.textContent = updateTimeUTC.toString().slice(4, 25);
+            gitRepoUpdateTime.textContent = formatter.format(updateTimeUTC);
+			
             let clone = document.importNode(temp.content, true);
-            gitBlock.appendChild(clone);
+            gitBlock.insertBefore(clone, gitBlock.firstChild);
         }
-
     };
 
     //pagination click handler
@@ -177,7 +186,6 @@ const menuClickHandler = () => {
         document.body.addEventListener('keydown', closeMenuOnEscape);
     }
 };
-
 
 const menuMobileClickHandler = () => {
     let mobileMenu = document.getElementById('mobileMenu');

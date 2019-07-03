@@ -129,7 +129,7 @@ a {
 }
 
 .opened span:nth-last-child(2) {
-    transform: rotate(-45deg) translateX(0px) translateY(-1px);
+    transform: rotate(-45deg) translateX(0px) translateY(0px);
 }
 
 .opened span:nth-last-child(3) {
@@ -513,7 +513,6 @@ a {
     align-items: flex-start;
 }
 
-
 .technology {
     height: 205px;
     font-size: 23px;
@@ -547,8 +546,6 @@ a {
     font-stretch: normal;
     line-height: normal;
     letter-spacing: normal;
-
-
 }
 
 .repository__name {
@@ -558,16 +555,20 @@ a {
 
 }
 
+.repository span {
+    margin-right: 10px;
+}
+
 .repository__description,
 .repository__time {
     min-width: 250px;
+    max-width: 450px;
     font-size: 16px;
     font-weight: normal;
     color: var(--darkgray);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
 .repository__time {
@@ -729,8 +730,10 @@ a {
     }
 
     .pagination {
+        display: block;
         position: static;
     }
+
 
     .recent-works__first {
         margin-right: 1.5em;
@@ -761,14 +764,9 @@ a {
         min-width: 300px;
         grid-template-columns: 100vw;
         grid-template-areas: "header" "introduce" "recent-works" "skills" "skills-content" "git-repo" "git-content" "hire-me";
-        grid-template-rows: auto auto auto auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto auto 110vh auto;
         grid-gap: 0;
     }
-
-    .pagination {
-        position: static;
-    }
-
 
     .header {
         padding: 1em 0;
@@ -848,6 +846,10 @@ a {
         width: 90vw;
     }
 
+    .git-repo__content {
+        margin-bottom: 0;
+    }
+
     .description {
         font-size: 25px;
     }
@@ -857,6 +859,11 @@ a {
         width: 93vw;
         display: block;
         height: auto;
+    }
+
+    .pagination {
+        margin-top: 5vh;
+        bottom: auto;
     }
 
     .footer {
@@ -1065,9 +1072,7 @@ a {
         padding: 10px 22px 0;
     }
 
-    .pagination {
-        position: static;
-    }
+
 
 
     .pagination a {
