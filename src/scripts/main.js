@@ -1,9 +1,9 @@
-"use strict";
+'use strict';
 (function () {
     const octokit = new Octokit();
 
-    const buildReposBlock = (formattedResult) => {
-        let temp = document.querySelector(".template__repo");
+    const buildReposBlock = formattedResult => {
+        let temp = document.querySelector('.template__repo');
         const gitBlock = document.querySelector('.git-content');
         const gitRepoName = temp.content.querySelector('.repository__name');
         const gitRepoDescription = temp.content.querySelector('.repository__description');
@@ -14,6 +14,7 @@
         const gitRepoLangColor = temp.content.querySelector('.language__color');
         miniLoader.style.display = 'none';
 
+
         let resLength = formattedResult.length;
         for (let i = 0; i < resLength; i++) {
             gitRepoLink.setAttribute('href', formattedResult[i].html_url);
@@ -23,25 +24,29 @@
 
             switch (gitRepoLang.textContent) {
                 case 'HTML':
-                    gitRepoLangColor.style.backgroundColor = '#E00000';
+                    gitRepoLangColor.setAttribute('class', 'language__color');
+                    gitRepoLangColor.classList.add('language__color--red');
                     break;
                 case 'CSS':
-                    gitRepoLangColor.style.backgroundColor = '#0094FF';
+                    gitRepoLangColor.setAttribute('class', 'language__color');
+                    gitRepoLangColor.classList.add('language__color--blue');
                     break;
                 case 'JavaScript':
-                    gitRepoLangColor.style.backgroundColor = '#FFC700';
+                    gitRepoLangColor.setAttribute('class', 'language__color');
+                    gitRepoLangColor.classList.add('language__color--orange');
                     break;
                 default:
-                    gitRepoLangColor.style.backgroundColor = '#83838E';
+                    gitRepoLangColor.setAttribute('class', 'language__color');
+                    gitRepoLangColor.classList.add('language__color--gray');
             }
 
-            const formatter = new Intl.DateTimeFormat("ru", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-                hour: "numeric",
-                minute: "numeric",
-                second: "numeric"
+            const formatter = new Intl.DateTimeFormat('ru', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+                hour: 'numeric',
+                minute: 'numeric',
+                second: 'numeric'
             });
 
             let updateTime = formattedResult[i].updated_at;
@@ -53,7 +58,6 @@
 
     };
 
-    //pagination click handler
     const pageClicker = evt => {
         evt.preventDefault();
 
@@ -62,6 +66,7 @@
         repositoryBlock.forEach(el => el.remove());
         const miniLoader = document.querySelector('#mini-loader');
         miniLoader.style.display = 'block';
+
 
         let active = Number(document.querySelector('.active').text);
 
@@ -83,41 +88,42 @@
         }
     };
 
-
-    const parseData = (pageInfo) => {
+    const parseData = pageInfo => {
         let parsedData = {};
-        let arrData = pageInfo.split(",");
-        let tempPage = document.querySelector(".template__pagination");
+        let arrData = pageInfo.split(',');
+        let tempPage = document.querySelector('.template__pagination');
         let clone = document.importNode(tempPage.content, true);
         const gitBlock = document.querySelector('.git-content');
 
         let item;
         for (item of arrData) {
             let linkInfo = /<([^>]+)>;\s+rel="([^"]+)"/ig.exec(item);
-            parsedData[linkInfo[2]] = linkInfo[1]
+            parsedData[linkInfo[2]] = linkInfo[1];
         }
         gitBlock.appendChild(clone);
         document.body.querySelector('.pagination').addEventListener('click', pageClicker);
     };
 
-    //error-handling block
     const errDrawer = (err) => {
+        const ERROR_TITLE = 'Извините, сейчас не удалось получить список репозиториев. Посмотреть их можно по ссылке:';
+        const REPOSITORY_LINK = 'https://github.com/ashmee?tab=repositories';
+        const GITHUB_PAGE= 'страница на GitHub';
         const gitContent = document.querySelector('.git-content');
         const errBlock = document.createElement('h1');
         const gitLink = document.createElement('a');
+
         errBlock.classList.add('repository__description');
-        errBlock.innerText = "Извините, сейчас не удалось получить список репозиториев. Посмотреть их можно по ссылке:";
+        errBlock.innerText = ERROR_TITLE;
         gitLink.classList.add('repository__link');
-        gitLink.innerText = "страница на GitHub";
-        gitLink.href = "https://github.com/ashmee?tab=repositories";
+        gitLink.innerText = GITHUB_PAGE;
+        gitLink.href = REPOSITORY_LINK;
         gitContent.appendChild(errBlock);
         gitContent.appendChild(gitLink);
-        gitContent.style.background = "url(./images/err.png) no-repeat bottom left";
+        gitContent.classList.add('repository__error');
         console.error(err);
     };
 
     const makeRequest = (page, pagination) => {
-
         octokit.request('GET /users/:username/repos', {
             username: 'ashmee',
             type: 'private',
@@ -147,7 +153,7 @@
 
                 buildReposBlock(formattedResult);
                 if (pagination) {
-                    parseData(pageInfo)
+                    parseData(pageInfo);
                 }
             })
             .catch(err => errDrawer(err));
@@ -159,55 +165,54 @@
         const currentCoord = window.pageYOffset;
         const sideMenu = document.getElementById('mySidenav');
 
-        if ((sideMenu.style.width === "260px" ||currentCoord > 200) && screen.width > 975 && window.innerWidth > 975) {
-            sideMenuButton.style.display="flex";
-            sideArrow.style.display="block";
+        if ((sideMenu.classList.contains('sidenav--open') || currentCoord > 200) && screen.width > 975 && window.innerWidth > 975) {
+            sideMenuButton.classList.add('visible-flex');
+            sideArrow.classList.add('visible-block');
         } else {
-            sideMenuButton.style.display="none";
-            sideArrow.style.display="none";
+            sideMenuButton.classList.remove('visible-flex');
+            sideArrow.classList.remove('visible-block');
         }
     };
 
     makeRequest(1, true);
 })();
 
+const closeMenuOnEscape = (event = 'click') => {
+    if (event.code === 'Escape' || event === 'click') {
+        document.getElementById('mySidenav').classList.add('sidenav--closed');
+        document.body.removeEventListener('keydown', closeMenuOnEscape);
+    }
+};
+
 const menuClickHandler = () => {
-    let sideMenu = document.getElementById('mySidenav');
+    const sideMenu = document.getElementById('mySidenav');
     const sideMenuButton = document.querySelector('.side-menu');
 
-    if (sideMenu.style.width === "260px") {
+    if (sideMenu.classList.contains('sidenav--open')) {
         sideMenuButton.setAttribute('class', 'side-menu');
-        sideMenu.style.width = "0px";
+        sideMenu.classList.remove('sidenav--open');
         closeMenuOnEscape();
     } else {
-        sideMenuButton.style.display="flex";
+        sideMenuButton.style.display = 'flex';
         sideMenuButton.setAttribute('class', 'side-menu opened');
-        sideMenu.style.width = "260px";
+        sideMenu.classList.remove('sidenav--closed');
+        sideMenu.classList.add('sidenav--open');
         document.body.addEventListener('keydown', closeMenuOnEscape);
     }
 };
 
-
 const menuMobileClickHandler = () => {
-    let mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenu = document.getElementById('mobileMenu');
     const mobileMenuButton = document.querySelector('.mobile-menu');
 
-    if (mobileMenu.style.width === "100vw") {
+    if (mobileMenu.classList.contains('visible-flex')) {
         mobileMenuButton.setAttribute('class', 'mobile-menu');
-        mobileMenu.style.width = "0px";
-        mobileMenu.style.height = "0px";
-        mobileMenu.style.display="none";
+        document.body.classList.remove('menu--open');
+        mobileMenu.classList.remove('visible-flex');
     } else {
-        mobileMenu.style.display="flex";
+        mobileMenu.classList.add('visible-flex');
         mobileMenuButton.setAttribute('class', 'mobile-menu opened');
-        mobileMenu.style.width = "100vw";
-        mobileMenu.style.height = "100vh";
+        document.body.classList.add('menu--open');
     }
 };
 
-const closeMenuOnEscape = (event = 'click')  => {
-    if (event.code === 'Escape' || event === 'click') {
-        document.getElementById('mySidenav').style.width = "0px";
-        document.body.removeEventListener('keydown', closeMenuOnEscape)
-    }
-};
