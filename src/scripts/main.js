@@ -180,6 +180,7 @@
 const closeMenuOnEscape = (event = 'click') => {
     if (event.code === 'Escape' || event === 'click') {
         document.getElementById('mySidenav').classList.add('sidenav--closed');
+        document.querySelector('.side-menu').classList.add('hidden');
         document.body.removeEventListener('keydown', closeMenuOnEscape);
     }
 };
@@ -189,12 +190,11 @@ const menuClickHandler = () => {
     const sideMenuButton = document.querySelector('.side-menu');
 
     if (sideMenu.classList.contains('sidenav--open')) {
-        sideMenuButton.setAttribute('class', 'side-menu');
+        sideMenuButton.setAttribute('class', 'side-menu visible-flex');
         sideMenu.classList.remove('sidenav--open');
         closeMenuOnEscape();
     } else {
-        sideMenuButton.style.display = 'flex';
-        sideMenuButton.setAttribute('class', 'side-menu opened');
+        sideMenuButton.setAttribute('class', 'side-menu opened visible-flex');
         sideMenu.classList.remove('sidenav--closed');
         sideMenu.classList.add('sidenav--open');
         document.body.addEventListener('keydown', closeMenuOnEscape);
@@ -215,4 +215,3 @@ const menuMobileClickHandler = () => {
         document.body.classList.add('menu--open');
     }
 };
-
