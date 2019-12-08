@@ -1,6 +1,6 @@
 {
   "name": "ashmee.github.io",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,7 @@
   "pre-push": [
     "test"
   ],
-  "author": "",
+  "author": "ashmee",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ashmee/ashmee.github.io/issues"

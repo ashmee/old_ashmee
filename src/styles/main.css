@@ -31,8 +31,8 @@ a {
 }
 
 #loader {
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
 }
 
 .loader {
@@ -45,7 +45,7 @@ a {
     width: 144px;
     height: 144px;
     -webkit-animation: spin 2s linear infinite;
-    animation:  spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 #mini-loader {
@@ -68,7 +68,7 @@ a {
 }
 
 .side-arrow {
-    display:none;
+    display: none;
     z-index: 3;
     position: fixed;
     color: var(--lightgray);
@@ -94,11 +94,11 @@ a {
 }
 
 .side-menu {
-    display:none;
+    display: none;
     z-index: 3;
     position: fixed;
     top: 3vh;
-    right:3vw;
+    right: 3vw;
     width: 60px;
     height: 60px;
     border-radius: 50%;
@@ -123,7 +123,7 @@ a {
     transition: transform 0.5s ease;
 }
 
-.side-menu:hover span{
+.side-menu:hover span {
     background: var(--orange);
     transition: transform 0.5s ease;
 }
@@ -142,7 +142,7 @@ a {
     transform: scale(0.2, 0.2);
 }
 
-.opened:hover span{
+.opened:hover span {
     background: var(--orange);
 
 }
@@ -152,7 +152,7 @@ a {
     z-index: 3;
     position: absolute;
     top: 2vh;
-    right:4vw;
+    right: 4vw;
     width: 60px;
     height: 60px;
     box-sizing: border-box;
@@ -194,7 +194,7 @@ a {
     text-align: center;
 }
 
-.mobile-menu__full .recent-works__title{
+.mobile-menu__full .recent-works__title {
     transition: transform 0.5s ease;
 }
 
@@ -203,7 +203,7 @@ a {
     transition: transform 0.5s ease;
 }
 
-.mobile-menu:hover span{
+.mobile-menu:hover span {
     background: var(--orange);
     transition: transform 0.5s ease;
 }
@@ -229,7 +229,7 @@ a {
 }
 
 .sidenav--open {
-    width:  260px;
+    width: 260px;
 }
 
 .sidenav--closed {
@@ -268,13 +268,23 @@ a {
 }
 
 @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
 }
 
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
 
@@ -336,16 +346,15 @@ a {
     width: 1232px;
     min-width: 1100px;
     height: 100%;
-    grid-template-columns:  .7fr .8fr;
-    grid-template-rows: 32px 100vh 100vh 1050px 630px 600px;
+    grid-template-columns: .7fr .8fr;
+    grid-template-rows: 32px 100vh 100vh 1050px 600px;
     grid-gap: 5px;
     grid-template-areas:
-            "header header"
-            "introduce introduce"
-            "recent-works recent-works"
-            "skills skills-content"
-            "git-repo git-content"
-            "hire-me hire-me";
+        "header header"
+        "introduce introduce"
+        "recent-works recent-works"
+        "skills skills-content"
+        "git-repo git-content";
 }
 
 .header {
@@ -422,7 +431,7 @@ a {
     margin-bottom: 5vh;
 }
 
-.introduce__content > .title {
+.introduce__content>.title {
     display: inline-block;
     padding: 0 10px;
 }
@@ -465,25 +474,25 @@ a {
 }
 
 .recent-works__img {
-    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     transition: all 0.3s ease-in-out
 }
 
 .recent-works__first:hover,
 .recent-works__second:hover {
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0, 0, 0, 0.7);
     transition: all 0.4s ease-in-out;
 }
 
 .recent-works__first:hover .recent-works__img,
 .recent-works__second:hover .recent-works__img {
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     opacity: 0.15;
     transition: all 0.4s ease-in-out
 }
 
 .recent-works__first:hover::before {
-    content: 'Tesla';
+    content: 'Text Prettier';
     position: absolute;
     top: 60px;
     left: 110px;
@@ -493,7 +502,7 @@ a {
 }
 
 .recent-works__first:hover::after {
-    content: 'Landing page with flexbox layout';
+    content: 'Plugin for Figma. Written in TypeScript';
     position: absolute;
     bottom: 60px;
     left: 110px;
@@ -526,12 +535,19 @@ a {
 }
 
 @keyframes bounce {
-    0%, 20%, 50%, 80%, 100% {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
         transform: translateY(0);
     }
+
     40% {
         transform: translateY(-30px);
     }
+
     60% {
         transform: translateY(-15px);
     }
@@ -557,7 +573,8 @@ a {
 }
 
 .technology {
-    height: 205px;
+    min-height: 140px;
+    margin-bottom: 15px;
     font-size: 23px;
     line-height: normal;
     font-style: normal;
@@ -646,15 +663,6 @@ a {
     background-color: var(--gray);
 }
 
-.hire-me__mail {
-    font-style: normal;
-    font-weight: 500;
-    font-size: 33px;
-    line-height: normal;
-    text-decoration-line: underline;
-    color: var(--blue);
-}
-
 .skills__content,
 .git-repo__content {
     position: sticky;
@@ -676,9 +684,6 @@ a {
     position: relative;
 }
 
-.hire-me {
-    grid-area: hire-me;
-}
 
 .footer {
     display: none;
@@ -748,12 +753,23 @@ a {
     margin-bottom: .3em;
 }
 
+.footer__menu--link:hover,
+.footer__tel:hover {
+    color: gray;
+    transition: transform 0.5s ease;
+}
+
 .social {
     margin-top: 1.1em;
 }
 
 .social__link {
     margin-right: .2em;
+}
+
+.social__link img:hover {
+    box-shadow: 0 1px 4px 2px grey;
+    transition: transform 0.5s ease;
 }
 
 .pagination {
@@ -819,8 +835,8 @@ a {
         width: 0;
         min-width: 300px;
         grid-template-columns: 100vw;
-        grid-template-areas: "header" "introduce" "recent-works" "skills" "skills-content" "git-repo" "git-content" "hire-me";
-        grid-template-rows: auto auto auto auto auto auto 110vh auto;
+        grid-template-areas: "header""introduce""recent-works""skills""skills-content""git-repo""git-content";
+        grid-template-rows: auto auto auto auto auto auto 110vh;
         grid-gap: 0;
     }
 
@@ -981,8 +997,8 @@ a {
         width: 0;
         min-width: 300px;
         grid-template-columns: 100vw;
-        grid-template-areas: "header" "introduce" "recent-works" "skills" "skills-content" "git-repo" "git-content" "hire-me";
-        grid-template-rows: auto 100vh 100vh 30vh auto 25vh 110vh auto;
+        grid-template-areas: "header""introduce""recent-works""skills""skills-content""git-repo""git-content";
+        grid-template-rows: auto 100vh 100vh 30vh auto 25vh 110vh;
         grid-gap: 0;
     }
 
@@ -1008,6 +1024,7 @@ a {
         margin-right: .4em;
         width: 175px;
         height: 156px;
+        border-radius: 6px;
     }
 
     .introduce__name {
@@ -1098,5 +1115,4 @@ a {
     .pagination a {
         font-size: 28px;
     }
-
 }
