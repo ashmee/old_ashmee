@@ -35,20 +35,20 @@ const filePath = {
     contextJson: '**/*.json',
     dir: {
         main: './',
-        prod: './build'
+        prod: './docs'
     },
     handlebars: './**/*.hbs',
     css: {
         src: ['./src/**/*.css','./*.css', './templates/**/*.css'],
-        dest: './build/css'
+        dest: './docs/css'
     },
     js: {
         src: './src/**/*.js',
-        dest: './build/js',
+        dest: './docs/js',
     },
     lint: {
-        css: ['**/*.css', '!node_modules/**/*', '!build/**/*'],
-        scripts: ['**/*.js', '!node_modules/**/*', '!build/**/*']
+        css: ['**/*.css', '!node_modules/**/*', '!docs/**/*'],
+        scripts: ['**/*.js', '!node_modules/**/*', '!docs/**/*']
     },
     templates:'./templates/**/*.hbs'
 };
@@ -111,7 +111,7 @@ gulp.task('copy-files', () => {
 });
 
 
-gulp.task('build-css', () => {
+gulp.task('docs-css', () => {
     const plugins = [
         nested,
         postcssShort({
@@ -132,7 +132,7 @@ gulp.task('build-css', () => {
         .pipe(gulp.dest(filePath.css.dest))
 });
 
-gulp.task('build-js', () => {
+gulp.task('docs-js', () => {
     return gulp.src(filePath.js.src)
         .pipe(sourcemaps.init())
         .pipe(babel({presets: ['@babel/env']}))
@@ -165,17 +165,17 @@ gulp.task('icons', () => {
 
 
 gulp.task('clean-html', () => {
-    return gulp.src('./build/*.html', {read: false})
+    return gulp.src('./docs/*.html', {read: false})
         .pipe(clean());
 });
 
 gulp.task('clean-css', () => {
-    return gulp.src('./build/css', {read: false})
+    return gulp.src('./docs/css', {read: false})
         .pipe(clean());
 });
 
 gulp.task('clean-js', () => {
-    return gulp.src('./build/js', {read: false})
+    return gulp.src('./docs/js', {read: false})
         .pipe(clean());
 });
 
@@ -193,7 +193,7 @@ gulp.task('assets', () => {
 gulp.task('browser-sync',  () => {
     browserSync.init({
         server: {
-            baseDir: './build'
+            baseDir: './docs'
         },
         notify: true
     });
