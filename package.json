@@ -50,7 +50,7 @@
     "postcss-reporter": "^6.0.1",
     "postcss-short": "^5.0.0",
     "pre-push": "^0.1.1",
-    "stylelint": "^9.10.1"
+    "stylelint": "^15.10.1"
   },
   "dependencies": {
     "@octokit/rest": "^16.28.2"
